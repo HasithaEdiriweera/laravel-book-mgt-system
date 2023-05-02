@@ -50,7 +50,9 @@ class AuthController extends Controller
                 'message' => 'Bad credentials'
             ], 401);
         }
-        
+
+
+        // Create token
         $token = $user->createToken('myapptoken')->plainTextToken;
         $expiration = config('sanctum.expiration');
 
